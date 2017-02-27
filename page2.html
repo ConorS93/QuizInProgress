@@ -32,6 +32,10 @@ and (orientation : portrait) { /* STYLES GO HERE */ }
 <form class ="QuestionSetup" id ="q1" data-question ="1">
  <ul>
  <h3>1. Who played this huge riff? </h3>
+  <div id="audioElements" width="100%">
+            <h2>Audio elements</h2>
+            <audio controls id="audio1"></audio>
+  </div>
  <li><input name="q1" type="radio" value="a"/>Noel Gallagher</li>
  <li><input name="q1" type="radio" value="b"/>Bob Dylan</li>
  <li><input name="q1" type="radio" value="c"/>Steve Vai</li>
@@ -41,7 +45,9 @@ and (orientation : portrait) { /* STYLES GO HERE */ }
   </form>
  </p>
   <script>
-  
+   players[1] = document.getElementById("Rock Show [New Version]");
+            players[1].src = "Rock Show [New Version]".mp3";
+            players[1].load();
   </script> 
   </body>
 
