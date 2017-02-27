@@ -27,8 +27,9 @@
  <ul>
  <h3>1. Who played this huge riff? </h3>
   <div id="audioElements" width="100%">
-            <audio controls id="Rock Show [New Version]"></audio>
-  </div>
+               <audio id="player[1]">
+        <source src="Rock Show [New Version].mp3"></source>
+    </audio>
  <li><input name="q1" type="radio" value="a"/>Noel Gallagher</li>
  <li><input name="q1" type="radio" value="b"/>Bob Dylan</li>
  <li><input name="q1" type="radio" value="c"/>Steve Vai</li>
@@ -41,7 +42,7 @@
    var players[];
    
    players[1] = document.getElementById("Rock Show [New Version]");
-            players[1].src = "Rock Show [New Version]".mp3";
+            players[1].src = "Rock Show [New Version].mp3";
             players[1].load();
   </script> 
   </body>
