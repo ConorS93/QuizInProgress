@@ -15,14 +15,8 @@
  z-index: 3;
  top: 0px;
   left: 0px;
- width:1000px;
- height:1600px;
-  
-  @media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 568px) 
-and (orientation : portrait) { /* STYLES GO HERE */ }
-    }
+ width:320px;
+ height:568px;
  }
 
  </style>
@@ -44,6 +38,8 @@ and (orientation : portrait) { /* STYLES GO HERE */ }
   </form>
  </p>
   <script>
+   var players[];
+   
    players[1] = document.getElementById("Rock Show [New Version]");
             players[1].src = "Rock Show [New Version]".mp3";
             players[1].load();
