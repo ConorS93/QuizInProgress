@@ -18,6 +18,9 @@
  width:800px;
  height:1600px;
  }
+ audio {
+            width: 100%;
+        }
 
  </style>
  <head>
@@ -26,9 +29,8 @@
 <form class ="QuestionSetup" id ="q1" data-question ="1">
  <ul>
  <h3>1. Who played this huge riff? </h3>
-  <div id="audioElements" width="100%">
-               <audio id="player[1]">
-        <source src="Rock Show [New Version].mp3"></source>
+     <audio id="audio1" controls>
+        <source src="blind.mp3"></source>
     </audio>
  <li><input name="q1" type="radio" value="a"/>Noel Gallagher</li>
  <li><input name="q1" type="radio" value="b"/>Bob Dylan</li>
@@ -39,11 +41,8 @@
   </form>
  </p>
   <script>
-   var players[];
-   
-   players[1] = document.getElementById("Rock Show [New Version]");
-            players[1].src = "Rock Show [New Version].mp3";
-            players[1].load();
+  var audio1 = document.getElementById("audio1");
+        console.log(audio1.paused);
   </script> 
   </body>
 
