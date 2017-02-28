@@ -79,7 +79,7 @@ if(q == 'q2){
       if (submitted == sessionStorage.a5){
         score++;
       }
-      $('#results').html ('<h3> Your score is: '+score+' out of 10 </h3>< a href="page2.html"> take quiz again</a>');
+      $('#results').html ('<h3> Your score is: '+score+' out of 10 </h3><a href="page2.html"> take quiz again</a>');
     }
     return false;
 }
