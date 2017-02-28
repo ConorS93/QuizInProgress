@@ -11,10 +11,8 @@ function init(){
  sessionStorage.setItem('a5','e');  
 }
 
-$(document).ready(function(){
-                  
+$(document).ready(function(){         
   $('.questionSetup').hide();
-
   $('#q1').show();
 
 $('#q1 #submit').click(function(){
