@@ -30,11 +30,6 @@
    text-align: center;
    position: center;
   }
-  
- audio {
-            width: 50%;
-            position: left;
-  }
  </style>
  <head>
  <body>
@@ -44,6 +39,17 @@
  <h3>1. Who played this huge riff? </h3>
   <div style="width:500px; margin:auto; position:left;">
      <audio id="audio1" controls style="width:50%">
+      audio::-internal-media-controls-download-button {
+    display:none;
+}
+
+audio::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+audio::-webkit-media-controls-panel {
+    width: calc(100% + 30px); /* Adjust as needed */
+}
         <source src="Rock Show [New Version].mp3"></source>
   </div>
     </audio>
