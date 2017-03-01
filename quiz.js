@@ -46,8 +46,4 @@ $('#q1 #submit').click(function(){
   return false;
   })
 })
-      $('#results').html ('<h3> Your score is: '+score+' out of 10 </h3><a href="page2.html"> take quiz again</a>');
-    }
-    return false;
-}
 window.addEventListener('load', init, false);
