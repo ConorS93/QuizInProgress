@@ -43,7 +43,7 @@
   </div>
     </audio>
  
- <button type= "submit" id="1a">Noel Gallagher</button>
+ <button id="1a">Noel Gallagher</button>
   <br>
   <button id="1b">Bob Dylan</button>
   <br>
@@ -60,13 +60,17 @@
         <source src="Rock Show [New Version].mp3"></source>
     </audio>
    <br>
-  <button id="1a">Noel Gallagher</button>
+  <button id="2a">Noel Gallagher</button>
   <br>
-  <button id="1b">Bob Dylan</button>
+  <button id="2b">Bob Dylan</button>
   <br>
- <button id="1c">Steve Vai</button>
+ <button id="2c">Steve Vai</button>
  <br>
- <button id="1d">billie joe armstrong</button>
+ <button id="2d">billie joe armstrong</button>
+  
+  <p id="correctResponse"></p>
+<p id="incorrectResponse"></p>
+  
  </ul>
   </form>
  
@@ -77,13 +81,13 @@
         <source src="Rock Show [New Version].mp3"></source>
     </audio>
   <br>
-  <button id="1a">Noel Gallagher</button>
+  <button id="3a">Noel Gallagher</button>
   <br>
-  <button id="1b">Bob Dylan</button>
+  <button id="3b">Bob Dylan</button>
   <br>
- <button id="1c">Steve Vai</button>
+ <button id="3c">Steve Vai</button>
  <br>
- <button id="1d">billie joe armstrong</button>
+ <button id="3d">billie joe armstrong</button>
  </ul>
   </form>
  <form class ="QuestionSetup" id ="q4" data-question ="4">
@@ -125,5 +129,18 @@
  </p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>">
 <script src="quiz.js"></script>
+<script>
+document.getElementById("1a").onclick = function() {RightAnswer()};
+document.getElementById("1b").onclick = function() {wrongAnswer()};
+document.getElementById("1c").onclick = function() {wrongAnswer()};
+document.getElementById("1d").onclick = function() {wrongAnswer()};
+
+function RightAnswer() {
+ 	 document.getElementById("correctResponse").innerHTML = "Correct Answer";
+}
+function wrongAnswer() {
+ 	 document.getElementById("incorrectResponse").innerHTML = "wrong Answer";
+}
+</script>
   </body>
 </html>
