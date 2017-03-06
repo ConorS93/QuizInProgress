@@ -53,7 +53,6 @@
  
    <p id="correctResponse"></p>
 <p id="incorrectResponse"></p>
- <p id ="Results"></p>
  </ul>
   </form>
   <br>
@@ -70,19 +69,6 @@ function RightAnswer() {
 }
 function wrongAnswer() {
  	 document.getElementById("incorrectResponse").innerHTML = "wrong Answer";
-}
-function sum(){
-
- 
-if (correctResponse){ 
- var score =0;
- score = (score + 1);
- document.getElementById("results").innerHTML = score;
- 
-}
-else if (incorrectResponse){
- score = (score);
- document.getElementById("results").innerHTML = score;
 }
 </script>
   </body>
