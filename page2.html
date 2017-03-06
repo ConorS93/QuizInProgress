@@ -42,6 +42,14 @@
         <source src="Rock Show [New Version].mp3"></source>
   </div>
     </audio>
+ <form class ="QuestionSetup" id ="q2" data-question ="2">
+ <ul>
+ <h3>2. Who played this epic riff? </h3>
+  <div style="width:500px; margin:auto; position:left;">
+     <audio id="audio1" controls style="width:50%">
+        <source src="Rock Show [New Version].mp3"></source>
+  </div>
+    </audio>
  
  <button type="button" id="1a">Noel Gallagher</button>
   <br>
@@ -69,6 +77,20 @@ function RightAnswer() {
 }
 function wrongAnswer() {
  	 document.getElementById("incorrectResponse").innerHTML = "wrong Answer";
+}
+ 
+function QuestionSwap() {
+            if (document.getElementById('q1')) {
+
+                if (document.getElementById('q1').style.display == 'none') {
+                    document.getElementById('q1').style.display = 'block';
+                    document.getElementById('q2').style.display = 'none';
+                }
+                else {
+                    document.getElementById('q1').style.display = 'none';
+                    document.getElementById('q2').style.display = 'block';
+                }
+            }
 }
 </script>
   </body>
