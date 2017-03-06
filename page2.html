@@ -80,15 +80,15 @@ function wrongAnswer() {
 }
  
 function QuestionSwap() {
-            if (document.getElementById('q1')) {
+            if (document.getElementById('QuestionSetup.q1')) {
 
-                if (document.getElementById('q1').style.display == 'none') {
-                    document.getElementById('q1').style.display = 'block';
-                    document.getElementById('q2').style.display = 'none';
+                if (document.getElementById('QuestionSetup.q1').style.display == 'none') {
+                    document.getElementById('QuestionSetup.q1').style.display = 'block';
+                    document.getElementById('QuestionSetup.q2').style.display = 'none';
                 }
                 else {
-                    document.getElementById('q1').style.display = 'none';
-                    document.getElementById('q2').style.display = 'block';
+                    document.getElementById('QuestionSetup.q1').style.display = 'none';
+                    document.getElementById('QuestionSetup.q2').style.display = 'block';
                 }
             }
 }
