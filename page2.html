@@ -92,13 +92,13 @@ function wrongAnswer() {
 function QuestionSwap() {
             if (document.getElementByClassId('QuestionSetup.q1')) {
 
-                if (document.getElementByClassId('QuestionSetup.q1').style.display == 'none') {
-                    document.getElementByClassId('QuestionSetup.q1').style.display = 'block';
-                    document.getElementByClassId('QuestionSetup.q2').style.display = 'none';
+                if (document.getElementByClassName(".QuestionSetup q1").style.display == 'none') {
+                    document.getElementByClassName(".QuestionSetup q1").style.display = 'block';
+                    document.getElementByClassName(".QuestionSetup q2").style.display = 'none';
                 }
                 else {
-                    document.getElementByClassId('QuestionSetup.q1').style.display = 'none';
-                    document.getElementByClassId('QuestionSetup.q2').style.display = 'block';
+                    document.getElementByClassName(".QuestionSetup q1").style.display = 'none';
+                    document.getElementByClassName(".QuestionSetup q2").style.display = 'block';
                 }
             }
 }
