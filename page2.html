@@ -54,26 +54,72 @@
    <p id="correctResponse"></p>
 <p id="incorrectResponse"></p>
  </ul>
- <form class ="QuestionSetup" id ="q2" data-question ="2">
+  <form class ="QuestionSetup" id ="q2" data-question ="2">
  <ul>
- <h3>2. Who played this epic riff? </h3>
-  <div style="width:500px; margin:auto; position:left;">
-     <audio id="audio2" controls style="width:50%">
+ <h3>2. Who played this huge riff? </h3>
+     <audio id="audio2" controls>
         <source src="Rock Show [New Version].mp3"></source>
-  </div>
-    </audio> 
- <button type="button" id="2a">Noel Gallagher</button>
+    </audio>
+   <br>
+  <button id="2a">Noel Gallagher</button>
   <br>
-  <button type="button" id="2b">Bob Dylan</button>
+  <button id="2b">Bob Dylan</button>
   <br>
- <button type="button" id="2c">Steve Vai</button>
+ <button id="2c">Steve Vai</button>
  <br>
- <button type="button" id="2d">billie joe armstrong</button>
+ <button id="2d">billie joe armstrong</button>
+  
+   </ul>
+  </form>
  
-   <p id="correctResponse"></p>
-<p id="incorrectResponse"></p>
+ <form class ="QuestionSetup" id ="q3" data-question ="3">
+ <ul>
+ <h3>3. Who played this huge riff? </h3>
+     <audio id="audio3" controls>
+        <source src="Rock Show [New Version].mp3"></source>
+    </audio>
+  <br>
+  <button id="3a">Noel Gallagher</button>
+  <br>
+  <button id="3b">Bob Dylan</button>
+  <br>
+ <button id="3c">Steve Vai</button>
+ <br>
+ <button id="3d">billie joe armstrong</button>
  </ul>
- </form>
+  </form>
+ <form class ="QuestionSetup" id ="q4" data-question ="4">
+ <ul>
+ <h3>4. Who played this huge riff? </h3>
+     <audio id="audio4" controls>
+        <source src="Rock Show [New Version].mp3"></source>
+    </audio>
+  <br>
+  <button id="1a">Noel Gallagher</button>
+  <br>
+  <button id="1b">Bob Dylan</button>
+  <br>
+ <button id="1c">Steve Vai</button>
+ <br>
+ <button id="1d">billie joe armstrong</button>
+ </ul>
+  </form>
+<form class ="QuestionSetup" id ="q5" data-question ="5">
+ <ul>
+ <h3>5. Who played this huge riff? </h3>
+     <audio id="audio5" controls>
+        <source src="Rock Show [New Version].mp3"></source>
+    </audio>
+  <br>
+  <button id="1a">Noel Gallagher</button>
+  <br>
+  <button id="1b">Bob Dylan</button>
+  <br>
+ <button id="1c">Steve Vai</button>
+ <br>
+ <button id="1d">billie joe armstrong</button>
+ </ul>
+  </form>
   <br>
  
  </p>
@@ -89,15 +135,55 @@ function RightAnswer() {
 function wrongAnswer() {
  	 document.getElementById("incorrectResponse").innerHTML = "wrong Answer";
 }
- $(document).ready(function(){
-      if (jQuery) {  
-        // jQuery is loaded  
-         alert("Yeah!");
-        } else {
-         // jQuery is not loaded
-         alert("Doesn't Work");
-        }
-      });
+var score = 0; //set score
+var total = 10; // sets total number
+var point = 1;// points per correct answer
+var highScore = 10;
+
+function init(){
+ sessionStorage.setItem('a1','a');  
+ sessionStorage.setItem('a2','b');  
+ sessionStorage.setItem('a3','c');  
+ sessionStorage.setItem('a4','d');  
+ sessionStorage.setItem('a5','e');  
+}
+
+$(document).ready(function(){         
+  $('.questionSetup').hide();
+  $('#q1').show();
+
+$('#q1 #submit').click(function(){
+  $('.questionSetup').hide();
+   process('q1');
+  $('#q2').fadeIn(250);
+  return false;
+  })
+  $('#q2 #submit').click(function(){
+  $('.questionSetup').hide();
+     process('q2');
+  $('#q3').fadeIn(250);
+  return false;
+  })
+  $('#q3 #submit').click(function(){
+  $('.questionSetup').hide();
+     process('q3');
+  $('#q4').fadeIn(250);
+  return false;
+  })
+  $('#q4 #submit').click(function(){
+  $('.questionSetup').hide();
+     process('q4');
+  $('#q5').fadeIn(250);
+  return false;
+  })
+  $('#q5 #submit').click(function(){
+  $('.questionSetup').hide();
+     process('q5');
+  $('#results').fadeIn(250);
+  return false;
+  })
+})
+window.addEventListener('load', init, false);
 </script>
   </body>
 </html>
