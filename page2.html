@@ -91,38 +91,19 @@ function RightAnswer() {
 function wrongAnswer() {
  	 document.getElementById("incorrectResponse").innerHTML = "wrong Answer";
 }
- 
- var score = 0; //set score
-var total = 10; // sets total number
-var point = 1;// points per correct answer
-var highScore = 10;
+<script type="text/javascript">
+      $(document).ready(function(){
+        if (jQuery) {  
+          // jQuery is loaded  
+          alert("Yeah!");
+        } else {
+          // jQuery is not loaded
+          alert("Doesn't Work");
+        }
+      });
+    </script>
 
-function init(){
- sessionStorage.setItem('a1','a');  
- sessionStorage.setItem('a2','b');  
- sessionStorage.setItem('a3','c');  
- sessionStorage.setItem('a4','d');  
- sessionStorage.setItem('a5','e');  
-}
 
-$(document).ready(function(){         
-  $('.questionSetup').hide();
-  $('#q1').show();
-
-$('#q1 #button').click(function(){
-  $('.questionSetup').hide();
-   process('q1');
-  $('#q2').fadeIn(250);
-  return false;
-  })
-  $('#q2 #button').click(function(){
-  $('.questionSetup').hide();
-     process('q2');
-  $('#q3').fadeIn(250);
-  return false;
-  })
-})
-window.addEventListener('load', init, false);
 }
 </script>
   </body>
