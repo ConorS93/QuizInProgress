@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+ 
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
  <title>QUESTIONS</title>
  <style>
    ul {
@@ -89,18 +92,37 @@ function wrongAnswer() {
  	 document.getElementById("incorrectResponse").innerHTML = "wrong Answer";
 }
  
-function QuestionSwap() {
-            if (document.getElementByClassId('QuestionSetup.q1')) {
+ var score = 0; //set score
+var total = 10; // sets total number
+var point = 1;// points per correct answer
+var highScore = 10;
 
-                if (document.getElementByClassName(".QuestionSetup q1").style.display == 'none') {
-                    document.getElementByClassName(".QuestionSetup q1").style.display = 'block';
-                    document.getElementByClassName(".QuestionSetup q2").style.display = 'hidden';
-                }
-                else {
-                    document.getElementByClassName(".QuestionSetup q1").style.display = 'hidden';
-                    document.getElementByClassName(".QuestionSetup q2").style.display = 'block';
-                }
-            }
+function init(){
+ sessionStorage.setItem('a1','a');  
+ sessionStorage.setItem('a2','b');  
+ sessionStorage.setItem('a3','c');  
+ sessionStorage.setItem('a4','d');  
+ sessionStorage.setItem('a5','e');  
+}
+
+$(document).ready(function(){         
+  $('.questionSetup').hide();
+  $('#q1').show();
+
+$('#q1 #submit').click(function(){
+  $('.questionSetup').hide();
+   process('q1');
+  $('#q2').fadeIn(250);
+  return false;
+  })
+  $('#q2 #submit').click(function(){
+  $('.questionSetup').hide();
+     process('q2');
+  $('#q3').fadeIn(250);
+  return false;
+  })
+})
+window.addEventListener('load', init, false);
 }
 </script>
   </body>
