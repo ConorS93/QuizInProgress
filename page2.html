@@ -54,11 +54,9 @@
   
   <div id="questionNumbers">
 
-  
-    
     <div class="Question1">
       <h2>Who wrote this huge riff?</h2>
- <button type="button" onclick="QuestionJump()">Noel Gallagher</button>
+ <button type="button" id="1a" onclick="ShowNext()">Noel Gallagher</button>
      <!-- insert audio code here -->
     </div>
  
@@ -73,10 +71,6 @@
     var questions = document.querySelectorAll('#questionNumbers .q');
     var currentCard = 0;
 
-    function showPrevious() {
-        QuestionJump(-1);
-    };
-  
     function showNext(){
         QuestionJump(+1);
     }
@@ -93,7 +87,7 @@
         if (currentQuestion == questions.length) currentQuestions = 0;
         
         // set the newly current card to be visible
-        questions[currentQuestions].className = 'card current';
+        questions[currentQuestions].className = 'question++';
     }
   </script>
   
