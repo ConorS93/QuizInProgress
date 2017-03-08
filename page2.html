@@ -134,7 +134,7 @@ function wrongAnswer() {
  	 document.getElementById("incorrectResponse").innerHTML = "wrong Answer";
 }
 }
- var questions = document.querySelectorAll('#deck .card');
+ var questions = document.querySelectorAll('#questionNumbers .questionSetup');
     var currentQuestion = 0;
 
     function showPrevious() {
@@ -157,7 +157,7 @@ function wrongAnswer() {
         if (currentQuestion == Question.length) currentCard = 0;
         
         // set the newly current card to be visible
-        Questions[currentQuestion].className = 'card current';
+        Questions[currentQuestion].className = 'questionSetup';
     }
 </script>
   </body>
