@@ -17,7 +17,7 @@
       max-height: 50%;
     }
   
-    #deck{
+    #questionNumbers{
         /* definition for the deck of "cards" */
         width: 100%;
         height: 70%;
@@ -27,7 +27,7 @@
         margin: 0px;
     }
   
-    .card{
+    .questionSetup{
         /* definition for a card in the deck */
         width: 100%;
         height: 100%;
@@ -40,7 +40,7 @@
         z-index: 1; /* and are stacked lower in the deck than the "current" card */
     }
 
-    .current{
+    .currentQuestion{
         opacity: 1; /* only the current card is shown */
         z-index: 2; /* and is stacked at the top of the deck of cards */
     }
@@ -87,7 +87,7 @@
         if (currentQuestion == questions.length) currentQuestions = 0;
         
         // set the newly current card to be visible
-        questions[currentQuestions].className = 'question++';
+        questions[currentQuestions].className = 'q++';
     }
   </script>
   
