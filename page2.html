@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="/QuizInProgress/jquery-3.1.1.min.js">
- 
- $(document).ready(function(){         
- $(".questionSetup").hide();
-  $("button").click(function(){
-        $("p").show();
-  })
-}
- </script>
  <title>QUESTIONS</title>
  <style>
    ul {
@@ -43,14 +34,14 @@
  </head>
  <body>
 <div id="questionNumbers">
-<form class ="QuestionSetup" id ="q1" data-question ="1">
+<div class ="QuestionSetup" id ="q1" data-question ="1">
  <ul>
  <h3>1. Who played this huge riff? </h3>
   <div style="width:500px; margin:auto; position:left;">
      <audio id="audio1" controls style="width:50%">
         <source src="Rock Show [New Version].mp3"></source>
-  </div>
     </audio> 
+  </div>
  <button type="button" id="1a" value="true">Noel Gallagher</button>
   <br>
   <button type="button" id="1b" value="false">Bob Dylan</button>
@@ -62,6 +53,7 @@
    <p id="correctResponse"></p>
 <p id="incorrectResponse"></p>
  </ul>
+  </div>
   <form class ="QuestionSetup" id ="q2" data-question ="2">
  <ul>
  <h3>2. Who played this huge riff? </h3>
@@ -142,7 +134,31 @@ function wrongAnswer() {
  	 document.getElementById("incorrectResponse").innerHTML = "wrong Answer";
 }
 }
+ var questions = document.querySelectorAll('#deck .card');
+    var currentQuestion = 0;
 
+    function showPrevious() {
+        goToQuestion(-1);
+    };
+  
+    function showNext(){
+        goToQuestion(+1);
+    }
+
+    function jumpToCard( desiredJump ){
+        // set the current card (not the target card) to be hidden
+        cards[currentQuestion].className = 'card';
+        
+        // select the desired card
+        currentQuestion = currentQuestion + desiredJump;
+        
+        // if we've reached the end wrap around to the beginning
+        if (currentQuestion < 0) currentQuestion = Question.length - 1;
+        if (currentQuestion == Question.length) currentCard = 0;
+        
+        // set the newly current card to be visible
+        Questions[currentQuestion].className = 'card current';
+    }
 </script>
   </body>
 </html>
