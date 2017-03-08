@@ -69,9 +69,10 @@
 
   <script>
     var questions = document.querySelectorAll('#questionNumbers .q');
-    var currentQuestion = 0;
+    var currentQuestion = 'q'++;
 
     function showNext(){
+	window.setInterval(200); 
         QuestionJump(+1);
     }
 
