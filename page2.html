@@ -1,96 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<script>
+window.onload = function() {
     
-  <style>
-    body, html {
-        width: 100%;
-        height: 100%;
+    /////////////////////////////////////////////////
+    // CREATE SAMPLE QUIZ ARRAY TO USE IN EXAMPLE //
+    /////////////////////////////////////////////////
+    
+    // Quiz constructor
+    function quizConstructor(question, answer, enabled, asked) {
+        this.question = question;
+        this.answer = answer;
+        this.enabled = enabled;
+        this.asked = asked;
     }
     
-    img {
-    /* auto scale large images to fit on screen */
-      max-width: 50%;
-      max-height: 50%;
-    }
-  
-    #questionNumbers{
-        /* definition for the deck of "cards" */
-        width: 100%;
-        height: 70%;
-        position: relative;
-        
-        padding: 0px;
-        margin: 0px;
-    }
-  
-    .questionSetup{
-        /* definition for a card in the deck */
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        
-        left: 0px;
-        top: 0px;
+    // Create quiz array
+    var quiz = new Array();
+            
+    // All quiz questions and answers
+    quiz[0] = new quizConstructor("Montgomery", "Alabama", false, 0);
+    quiz[1] = new quizConstructor("Juneau", "Alaska", true, 0);
+    quiz[2] = new quizConstructor("Phoenix", "Arizona", true, 0);
+    quiz[3] = new quizConstructor("Little Rock", "Arkansas", false, 0);
+    quiz[4] = new quizConstructor("Sacramento", "California", true, 0);
+    quiz[5] = new quizConstructor("Denver", "Colorado", false, 0);
+    quiz[6] = new quizConstructor("Hartford", "Connecticut", false, 0);
+    quiz[7] = new quizConstructor("Dover", "Delaware", false, 0);
+    quiz[8] = new quizConstructor("Tallahassee", "Florida", false, 0);
+    quiz[9] = new quizConstructor("Atlanta", "Georgia", true, 0);
 
-        opacity: 0; /* by default all cards are hidden */
-        z-index: 1; /* and are stacked lower in the deck than the "current" card */
+    /////////////////////////////////////////////////
+    // END: CREATE SAMPLE QUIZ ARRAY TO USE IN EXAMPLE //
+    /////////////////////////////////////////////////
+    
+    
+    // Find the number of questions that the user has enabled
+    var numEnabled = 0;
+    
+    for (var i = 0; i < quiz.length; i++) {
+        if (quiz[i].enabled == true) {
+            numEnabled++;
+        }
     }
 
-    .currentQuestion{
-        opacity: 1; /* only the current card is shown */
-        z-index: 2; /* and is stacked at the top of the deck of cards */
+
+    // Ask all enabled questions in random order
+    for (var i = 0; i < numEnabled; i++) {
+    
+        // Find random question that hasn't been asked yet
+        do {
+            
+            var randomNum = Math.floor(Math.random() * quiz.length);
+        
+        } while (quiz[randomNum].enabled == false || quiz[randomNum].asked == 1);
+        
+        // Ask question
+        var question = quiz[randomNum].question + " is the capital of which state?";
+        document.getElementById("divSolution").innerHTML += "<p>" + question + "</p>";
+        
+        // Mark question as asked
+        quiz[randomNum].asked++;
     }
-  
-  </style>
-  <title>Questions</title>
+}
+</script>
 </head>
+
 <body>
-  
-  <h1>Basic slideshow with javascript</h1>
-  
-  <div id="questionNumbers">
-
-    <div class="Question1">
-      <h2>Who wrote this huge riff?</h2>
- <button type="button" id="1a" onclick="ShowNext()">Noel Gallagher</button>
-     <!-- insert audio code here -->
-    </div>
- 
-    <div class="Question2">
-      <h2>Who Wrote This Epic Riff</h2>
-		<!-- insert audio code here -->
-    </div>
-    
-  </div>
-
-  <script>
-    var questions = document.querySelectorAll('#questionNumbers .q');
-    var currentQuestion = 'q'++;
-
-    function showNext(){
-	window.setInterval(200); 
-        QuestionJump(+1);
-    }
-
-    function QuestionJump( desiredJump ){
-        // set the current card (not the target card) to be hidden
-        questions[currentQuestion].className = 'q';
-        
-        // select the desired card
-        currentQuestion = currentQuestion + desiredJump;
-        
-        // if we've reached the end wrap around to the beginning
-        if (currentQuestion < 0) currentQuestions = questions.length - 1;
-        if (currentQuestion == questions.length) currentQuestions = 0;
-        
-        // set the newly current card to be visible
-        questions[currentQuestions].className = 'q++';
-    }
-  </script>
-  
+<div id="divSolution"></div>
 </body>
 </html>
