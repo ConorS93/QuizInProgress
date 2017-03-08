@@ -34,7 +34,7 @@
  </style>
  <head>
  <body>
-<p id="questionNumbers">
+<div id="questionNumbers">
 <form class ="QuestionSetup" id ="q1" data-question ="1">
  <ul>
  <h3>1. Who played this huge riff? </h3>
@@ -122,7 +122,7 @@
   </form>
   <br>
  
- </p>
+ </div>
 <script>
 if(value==true){
  function correctAnswer(){
@@ -136,7 +136,7 @@ function wrongAnswer() {
 }
 }
 $(document).ready(function(){         
-  $('.questionSetup').hide();
+  $('questionNumbers').hide();
   $('#q1').show();
 }
 
