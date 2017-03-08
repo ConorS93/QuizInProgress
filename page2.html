@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="/QuizInProgress/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/QuizInProgress/jquery-3.1.1.min.js">
+ 
+ $(document).ready(function(){         
+ $('.questionSetup').hide();
+}
+ </script>
  <title>QUESTIONS</title>
  <style>
    ul {
@@ -32,7 +37,7 @@
    position: center;
   }
  </style>
- <head>
+ </head>
  <body>
 <div id="questionNumbers">
 <form class ="QuestionSetup" id ="q1" data-question ="1">
@@ -134,9 +139,6 @@ else if(value==false){
 function wrongAnswer() {
  	 document.getElementById("incorrectResponse").innerHTML = "wrong Answer";
 }
-}
-$(document).ready(function(){         
- $('.questionSetup').hide();
 }
 
 </script>
