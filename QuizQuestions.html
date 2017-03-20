@@ -40,7 +40,7 @@
 <p id="questionArea"></p> 
 <p id="n1"></p>
 <div id="starter1"> <button onclick="Questions.Q1" id="b1">Lets Get Rockin \m/!</button><br/></div><!--this is the button to start the quiz.-->
-<div id="center1">Question <text id="q1">0</text> "Score is <text id="score1">0</text></div><!--tells user the current Question and score-->
+<div id="center1">Question is <text id="q1">0</text> Score is <text id="score1">0</text></div><!--tells user the current Question and score-->
 <script>
 var b = 0;
             b++;
@@ -49,10 +49,9 @@ var d = 0;
             
             var Questions = {
                 Q1: function(){
-                                    document.getElementById("q1").innerHTML = d++;
                                     document.getElementById("questionArea").innerHTML = "Who played this tune?" + "<br /><br /><br />" + "<button onclick=Awnswers.correct1() id=q1>NoelGallagher</button><br />" + "<button onclick=Answers.incorrect1() id=q2>8</button><br />" + "<button onclick=Answers.incorrect1() id=q3>25</button><br />";
                     document.getElementById("starter1").innerHTML = "";
-                    
+                     document.getElementById("q1").innerHTML = d++;
                 },
                 
                 Q2: function(){
