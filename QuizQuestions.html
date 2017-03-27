@@ -40,7 +40,7 @@
 <body>
 <p id="questionArea"></p> 
 <p id="n1"></p>
-<div id="starter1"><button onclick="Q1" id="b1">Lets Get Rockin \m/!</button><br/></div><!--this is the button to start the quiz.-->
+<div id="starter1"><button onclick="Q1()" id="b1">Lets Get Rockin \m/!</button><br/></div><!--this is the button to start the quiz.-->
  <p id="center1">Question is <text id="q1">0</text> Score is <text id="score1"></text></p><!--tells user the current Question and score-->
 <p id="n1"></p>
  <script>
@@ -51,28 +51,28 @@ var d = 0;
             d++;
             
             var Questions=[
-                Q1: function(){
+                function Q1(){
                  document.getElementById("q1").innerHTML = d++;
                                     document.getElementById("questionArea").innerHTML = "What is this chord?" + "<br /><br /><br /><br />" + "<button onclick="correct1()" id=q1>E Major</button><br />" + "<button onclick="incorrect1()" id=q2>E Minor</button><br />" + "<button onclick="incorrect1()" id=q2>E Major 7th</button><br />" + "<button onclick=Answers.incorrect1() id=q2>E Minor 7th</button><br />;
                                     document.getElementById("starter1").innerHTML = "";
                 },
                 
-                Q2: function(){
+                function Q2(){
                     document.getElementById("questionArea").innerHTML = "Is this chord a Major, Minor, Major 7th or Minor 7th?" + "<br /><br /><br /><br />" + "<button onclick="ans4()" id=q4>Major</button><br />" + "<button onclick="ans4()" id=q5>Minor</button><br />" + "<button onclick="ans3()" id=q6>Major 7th</button><br />" + "<button onclick="ans4()" id=q4>Minor 7th</button><br />";
                  document.getElementById("n1").innerHTML = "";
                     document.getElementById("q1").innerHTML = d++;
                 },
-                Q3: function(){
+                function Q3(){
                     document.getElementById("questionArea").innerHTML = "This chord can often be found in Jazz but what is it?" + "<br /><br /><br />" + "<button onclick=Answers.correct3() id=q4>14</button><br />" + "<button onclick=Answers.wrong3() id=q5>20</button><br />" + "<button onclick=Answers.wrong3() id=q6>16</button><br />";
                  document.getElementById("n1").innerHTML = "";
                     document.getElementById("q1").innerHTML = d++;
                 },
-                Q4: function() {
+                function Q4(){
                     document.getElementById("questionArea").innerHTML = "what chord is playing (hint; it has two names)" + "<br /><br /><br />" + "<button onclick=Answers.ans4() id=q4>14</button><br />" + "<button onclick=Answers.ans4() id=q5>20</button><br />" + "<button onclick=Answers.ans3() id=q6>16</button><br />";
                  document.getElementById("n1").innerHTML = "";
                     document.getElementById("q1").innerHTML = d++;
                 },
-                Q5:function(){
+                function Q5(){
                     document.getElementById("questionArea").innerHTML = "doong?" + "<br /><br /><br />" + "<button onclick=Answers.correct3() id=q4>14</button><br />" + "<button onclick=Answers.wrong3() id=q5>20</button><br />" + "<button onclick=Answers.wrong3() id=q6>16</button><br />"; 
                  document.getElementById("n1").innerHTML = "";
                     document.getElementById("q1").innerHTML = d++;
