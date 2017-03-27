@@ -86,7 +86,7 @@ var d = 0;
             var Questions = {
                 Q1: function(){
                  document.getElementById("q1").innerHTML = d++;
-                                    document.getElementById("questionArea").innerHTML = "What is this chord?" + "<br /><br /><br /><br />" + "<button onclick=Answers.correct1() id=q1>E Major</button><br />" + "<button onclick=Answers.incorrect1() id=q2>E Minor</button><br />" + "<button onclick=Answers.incorrect1() id=q2>E Major 7th</button><br />" + <button onclick=Answers.incorrect1() id=q2>E Minor 7th</button><br />;
+                                    document.getElementById("questionArea").innerHTML = "What is this chord?" + "<br /><br /><br /><br />" + "<button onclick=Answers.correct1() id=q1>E Major</button><br />" + "<button onclick=Answers.incorrect1() id=q2>E Minor</button><br />" + "<button onclick=Answers.incorrect1() id=q2>E Major 7th</button><br />" + "<button onclick=Answers.incorrect1() id=q2>E Minor 7th</button><br />;
                     audioBufferManager.createBufferFor("chord1.mp3");
                  playFromBufferNumber(0);
                                     document.getElementById("starter1").innerHTML = "";
