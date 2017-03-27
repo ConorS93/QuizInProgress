@@ -35,49 +35,17 @@
   }
  
 </style>
- 
- <script src="AudioBufferManager.js"></script>
- 
+
 </head>
 <body>
 <p id="questionArea"></p> 
 <p id="n1"></p>
-<div id="starter1"> <button onclick="Questions.Q1()" id="b1">Lets Get Rockin \m/!</button><br/></div><!--this is the button to start the quiz.-->
+<div id="starter1"><button onclick="Questions.Q1()" id="b1">Lets Get Rockin \m/!</button><br/></div><!--this is the button to start the quiz.-->
 <div id="audio">
  <div id="center1">Question is <text id="q1">0</text> Score is <text id="score1">0</text></div><!--tells user the current Question and score-->
 <p id="n1"></p>
  <script>
- 
-
-var audioContext;
-if (window.AudioContext) {
- audioContext = new window.AudioContext();
-}
-else if (window.webkitAudioContext) {
- audioContext = new window.webkitAudioContext();
-}  
-  
-var audioBufferManager = new AudioBufferManager(audioContext);
-  
-audioBufferManager.createBufferFor("chord1.mp3");
-audioBufferManager.createBufferFor("chord2.mp3");
-audioBufferManager.createBufferFor("chord3.mp3");
-audioBufferManager.createBufferFor("chord4.mp3");
-audioBufferManager.createBufferFor("chord5.mp3");
-audioBufferManager.createBufferFor("chord6.mp3");
-audioBufferManager.createBufferFor("chord7.mp3");
-audioBufferManager.createBufferFor("chord8.mp3");
-audioBufferManager.createBufferFor("chord9.mp3");
-audioBufferManager.createBufferFor("chord10.mp3");
-audioBufferManager.buffers[0]
- function playFromBufferNumber()
-  {  
-var audioSource = audioContext.createBufferSource();
-audioSource.buffer = audioBufferManager.buffers[0];  
-audioSource.connect(audioContext.destination);
-audioSource.start(0);
-  }  
-  
+   
 var b = 0;
             b++;
 var d = 0;
@@ -87,8 +55,7 @@ var d = 0;
                 Q1: function(){
                  document.getElementById("q1").innerHTML = d++;
                                     document.getElementById("questionArea").innerHTML = "What is this chord?" + "<br /><br /><br /><br />" + "<button onclick=Answers.correct1() id=q1>E Major</button><br />" + "<button onclick=Answers.incorrect1() id=q2>E Minor</button><br />" + "<button onclick=Answers.incorrect1() id=q2>E Major 7th</button><br />" + "<button onclick=Answers.incorrect1() id=q2>E Minor 7th</button><br />;
-                    audioBufferManager.createBufferFor("chord1.mp3");
-                 playFromBufferNumber(0);
+              
                                     document.getElementById("starter1").innerHTML = "";
                      
                 },
