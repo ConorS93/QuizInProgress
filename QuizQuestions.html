@@ -41,7 +41,7 @@
 <p id="questionArea"></p> 
 <p id="n1"></p>
 <div id="starter1"><button onclick="Q1" id="b1">Lets Get Rockin \m/!</button><br/></div><!--this is the button to start the quiz.-->
- <div id="center1">Question is <text id="q1">0</text> Score is <text id="score1">0</text></div><!--tells user the current Question and score-->
+ <p id="center1">Question is <text id="q1">0</text> Score is <text id="score1"></text></p><!--tells user the current Question and score-->
 <p id="n1"></p>
  <script>
    
@@ -50,7 +50,7 @@ var b = 0;
 var d = 0;
             d++;
             
-            var Questions={
+            var Questions=[
                 Q1: function(){
                  document.getElementById("q1").innerHTML = d++;
                                     document.getElementById("questionArea").innerHTML = "What is this chord?" + "<br /><br /><br /><br />" + "<button onclick="correct1()" id=q1>E Major</button><br />" + "<button onclick="incorrect1()" id=q2>E Minor</button><br />" + "<button onclick="incorrect1()" id=q2>E Major 7th</button><br />" + "<button onclick=Answers.incorrect1() id=q2>E Minor 7th</button><br />;
@@ -77,10 +77,9 @@ var d = 0;
                  document.getElementById("n1").innerHTML = "";
                     document.getElementById("q1").innerHTML = d++;
                 },
-            };
+        ];
         
-        
-        var Answers = {
+        var Answers = [
             correct1: function() {
                     document.getElementById("score1").innerHTML = b++;
                 document.getElementById("questionArea").innerHTML = "Correct";
@@ -142,7 +141,7 @@ var d = 0;
                 document.getElementById("msg1").innerHTML = "Your score is /10";
                 
             },
-        };
+        ];
 </script>
  </body> 
 </html>
