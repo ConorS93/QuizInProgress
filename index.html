@@ -1,55 +1,210 @@
 <!DOCTYPE html>
 <html>
-<head>
- <title>The Guitar Riff Quiz</title>
- <style>
- p#titlepage {
- font-family: sans-serif;
- text-align: center;
- font-size: 24pt;
- background-color: blue;
-  line-height: 200%;
-   position: absolute;
-            z-index: 1;
-              top: 75px;
-            left: 500px;
- }
-  
-  img#guitar {
+    <head>
+        <title>The Guitar chord Quiz</title>
+        <style>
+            h2 {
+                font-family: sans-serif;
+                text-align: center;
+                color: black;
+                font-size: 24pt;
+                background-color: lightblue;
+                line-height: 200%;
+                position: absolute;
+                z-index: 1;
+                top: 0px;
+                left: 0px;
+            }
+        #ScoreKeep  {
+            font-family: sans-serif;
+            text-align: center;
+            color: white;
+            font-size: 12pt;
+            background-color: black;
+            line-height: 200%;
             position: absolute;
-            z-index: 2;
-            top: 200px;
-            left: 400px;
+            z-index: 1;
+            top: 500px;
+            left: 250px;
         }
-
-     p#Rockin {
-        font-family: cursive, sans-serif;
-        font-size: 16pt;
-        background-color: lightgreen;
-        border: dotted 3px purple;
-        text-align: center;
-        line-height: 200%;
-      position: absolute;
-      z-index: 3;
-             top: 500px;
-            left: 550px;
-    }
- </style>
-</head>
-
- <body>
-  <body width="100%" height="100%">
-   
-   <p id="titlepage">
-    The Guitar Riff Quiz! 
-   </p>
-   <p id="Rockin">
-    <a href="QuizQuestions.html">Lets Get Rockin' \m/!</a>
-   </p>
-   
-  <hr />
-   
-<img id="guitar" src="Gibson-LP.png" alt="Guitar" height = "200", width = "400"></img>
- </body>
-
+        #QuestionKeep {
+            font-family: sans-serif;
+            text-align: center;
+            color: white;
+            font-size: 12pt;
+            background-color: black;
+            line-height: 200%;
+            position: absolute;
+            z-index: 1;
+            top: 110px;
+            left: 250px;
+        }
+       button {
+            font-family: sans-serif;
+            text-align: center;
+            color: white;
+            font-size: 12pt;
+            background-color: black;
+            line-height: 200%;
+            position: center;
+            z-index: 1;
+            top: 125px;
+            left: 300px;
+        }
+        </style>
+        <h2> The Guitar Chord Quiz!</h2>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+         <script src="AudioBufferManager.js"></script>
+    </head>
+    <body>
+                <hr>
+        <div id="QuestionKeep">Question: <text id="q1">0</text></div>
+                <p id="question1"></p>
+                <p id="msg1"></p>
+        <div id="audioElements" width="100%">
+            <br />
+            <audio controls id="audio1"></audio>
+                <br />
+                <br />
+        <div id="ScoreKeep">Score: <text id="score1">0</text></div>
+                <div id="starter1">
+                        <button onclick="Ques1()" id="b1">Begin</button><br />
+                    </div>
+                <p id="n1"></p>
+        
+                <script>
+            var player;
+                        var b = 0;
+                        b++;
+                        var Q = 0;
+                        Q++;
+            
+            function NextQ(){
+                document.getElementById("n1").innerHTML = "";
+                document.getElementById("q1").innerHTML = Q++;
+            }
+        
+            
+                        function Ques1() {
+                                document.getElementById("q1").innerHTML = Q++;
+                                document.getElementById("question1").innerHTML = "This chord is a Jazz Chord but which one is it"+"<br />"+"<br /><br /><br />" + "<button onclick=Correct1() id=q1>13th</button><br />" + "<button onclick=Incorrect1() id=q2>Minor 7th</button><br />" + "<button onclick=Incorrect1() id=q3>Major 7th</button><br />";
+                    player = document.getElementById("audio1");
+                    player.src = "chord1.mp3";
+                    player.load();
+                document.getElementById("starter1").innerHTML = "";
+            }
+        function Correct1() {
+                document.getElementById("score1").innerHTML = b++;
+            document.getElementById("question1").innerHTML = "Correct, it was the A13 Chord!";
+            document.getElementById("starter1").innerHTML = "";
+            document.getElementById("n1").innerHTML = "<button onclick=Ques2()>Next</button><br />";
+        }
+        function Incorrect1() {
+            document.getElementById("question1").innerHTML = "Incorrect, it was the A13 Chord";
+            document.getElementById("starter1").innerHTML = "";
+            document.getElementById("n1").innerHTML = "<button onclick=Ques2()>Next</button><br />";
+                  }
+        function Ques2() {
+            document.getElementById("question1").innerHTML = "Is this a Asus2 or Bsus4?" + "<br /><br />" + "<button onclick=Incorrect2() id=q5>Bsus4</button><br />" + "<button onclick=Correct2() id=q6>Asus2</button><br />";
+            player = document.getElementById("audio1");
+            player.src = "chord2.mp3";
+            player.load();
+            NextQ();
+        }
+        function Correct2() {
+                document.getElementById("score1").innerHTML = b++;
+                document.getElementById("question1").innerHTML = "Correct it was the Asus2 Chord, this odd chord is found in 'Teenage Dirtbag' by Wheatus & 'Best Of You' by Foo Fighters" + "<br /><br />" + "Both songs Also use C#m7 & Bsus4 Chords";
+                document.getElementById("starter1").innerHTML = "";
+                document.getElementById("n1").innerHTML = "<button onclick=Ques3()>Next</button><br />";
+        }
+        function Incorrect2() {
+            document.getElementById("question1").innerHTML = "Incorrect it was the Asus2 Chord, this odd chord is found in 'Teenage Dirtbag' by Wheatus & 'Best Of You' by Foo Fighters" + "<br /><br />" + "Both songs Also use C#m7 & Bsus4 Chords";
+            document.getElementById("starter1").innerHTML = "";
+            document.getElementById("n1").innerHTML = "<button onclick=Ques3()>Next</button><br />";
+        }
+        function Ques3() {
+            document.getElementById("question1").innerHTML = "...and this one?" + "<br /><br /><br />" + "<button onclick=Incorrect3() id=q4>major</button><br />" + "<button onclick=correct3() id=q5>minor</button><br />" + "<button onclick=Incorrect3() id=q6>major 7th</button><br />";
+            player = document.getElementById("audio1");
+            player.src = "chord3.mp3";
+            player.load();
+            NextQ();
+        }
+        function correct3() {
+                document.getElementById("score1").innerHTML = b++;
+                document.getElementById("question1").innerHTML = "Correct it was the Major 7th";
+                document.getElementById("starter1").innerHTML = "";
+                document.getElementById("n1").innerHTML = "<button onclick=Ques4()>Next</button><br />";
+        }
+        function Incorrect3() {
+            document.getElementById("question1").innerHTML = "Incorrect it was the Major 7th";
+            document.getElementById("starter1").innerHTML = "";
+            document.getElementById("n1").innerHTML = "<button onclick=Ques4()>Next</button><br />";
+        }
+                    function Ques4() {
+                            document.getElementById("question1").innerHTML = "What is This Chord Type" + "<br /><br /><br />" + "<button onclick=Correct4() id=q1>Major</button><br />" + "<button onclick=Incorrect4() id=q2>Minor</button><br />" + "<button onclick=Incorrect4() id=q3>Major</button><br />";
+            player= document.getElementById("audio1");
+            player.src = "chord4.mp3";
+            player.load();
+            NextQ();
+        }
+        function Correct4() {
+                document.getElementById("score1").innerHTML = b++;
+            document.getElementById("question1").innerHTML = "Correct it was the E major Chord!";
+            document.getElementById("starter1").innerHTML = "";
+            document.getElementById("n1").innerHTML = "<button onclick=Ques5()>Next</button><br />";
+        }
+        function Incorrect4() {
+            document.getElementById("question1").innerHTML = "Incorrect, it was the E Major Chord";
+            document.getElementById("starter1").innerHTML = "";
+            document.getElementById("n1").innerHTML = "<button onclick=Ques5()>Next</button><br />";
+        }
+        function Ques5() {
+            document.getElementById("question1").innerHTML = "What about this chord?" + "<br /><br /><br />" + "<button onclick=Incorrect5() id=q4>major</button><br />" + "<button onclick=Incorrect5() id=q5>minor</button><br />" + "<button onclick=Correct5() id=q6>major 7th</button><br />";
+            player = document.getElementById("audio1");
+            player.src = "chord5.mp3";
+            player.load();
+            NextQ()
+        }
+        function Correct5() {
+                document.getElementById("score1").innerHTML = b++;
+                document.getElementById("question1").innerHTML = "Correct it was the Major 7th";
+                document.getElementById("starter1").innerHTML = "";
+                document.getElementById("n1").innerHTML = "<button onclick=Ques6()>Next</button><br />";
+        }
+        function Incorrect5() {
+            document.getElementById("question1").innerHTML = "Incorrect it was the Major 7th";
+            document.getElementById("starter1").innerHTML = "";
+            document.getElementById("n1").innerHTML = "<button onclick=Ques6()>Next</button><br />";
+        }
+        function Ques6() {
+            document.getElementById("question1").innerHTML = "...and this one?" + "<br /><br /><br />" + "<button onclick=Incorrect6() id=q4>major</button><br />" + "<button onclick=correct6() id=q5>minor</button><br />" + "<button onclick=Incorrect6() id=q6>major 7th</button><br />";
+            player = document.getElementById("audio1");
+            player.src = "chord6.mp3";
+            player.load();
+            NextQ();
+        }
+        function correct6() {
+                document.getElementById("score1").innerHTML = b++;
+                document.getElementById("question1").innerHTML = "Correct it was the Major 7th";
+                document.getElementById("starter1").innerHTML = "";
+                document.getElementById("n1").innerHTML = "<button onclick=end()>Next</button><br />";
+        }
+        function Incorrect6() {
+            document.getElementById("question1").innerHTML = "Incorrect it was the Major 7th";
+            document.getElementById("starter1").innerHTML = "";
+            document.getElementById("n1").innerHTML = "<button onclick=end()>Next</button><br />";
+        }
+        function end() {
+            var finalScore = document.getElementById("score1").innerHTML;
+            document.getElementById("question1").innerHTML ="";
+            document.getElementById("msg1").innerHTML = "Well done! your score is " + finalScore;
+            document.getElementById("starter1").innerHTML ="";
+        }
+                </script>
+            </div>
+    </body>
 </html>
+
