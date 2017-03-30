@@ -1,0 +1,54 @@
+body{
+    font-family: sans-serif;
+    text-align: center;
+    color: black;
+    background-color: lightblue;
+    line-height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+h2 {
+    font-family: sans-serif;
+    color: black;
+    font-size: 24pt;
+
+}
+#ScoreKeep  {
+    color: white;
+    font-size: 16pt;
+    background-color: black;
+    border-color: white;
+}
+#QuestionKeep {
+    color: white;
+    font-size: 16pt;
+    background-color: black;
+    border-color: white;
+}
+button {
+    color: white;
+    font-size: 12pt;
+    border-color: white;
+    background-color: black;
+    z-index: 1;
+    padding: 10px 10px;
+}
+#question1{
+    color: black;
+    font-size: 12pt;
+    background-color: white;
+    border-color: black;
+}
+#msg1{
+    color: black;
+    font-size: 12pt;
+    background-color: white;
+    border-color: black;
+}
+#n1{
+    color: white;
+    font-size: 12pt;
+    background-color: black;
+    border-color: white;
+}
