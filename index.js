@@ -21,7 +21,6 @@ document.getElementById("starter1").innerHTML = "";
 function Correct1() {
 document.getElementById("score1").innerHTML = b++;
     document.getElementById("question1").innerHTML = "Correct, it was the A13 Chord!";
-    document.imgDisplay.src = pic[0].src;
     document.getElementById("n1").innerHTML = "<button onclick=Ques2()>Next</button>";
     document.getElementById("f1").innerHTML = "";
 }
